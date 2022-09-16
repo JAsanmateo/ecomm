@@ -11,11 +11,19 @@ ProductTag.init(
     primaryKey: true,
     autoIncrement: true
   },
+  tag_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "tag",
+      key: "id"
+    }
+  },
   product_id: {
     type: DataTypes.INTEGER,
-    //how to make this reference another category
-  }
-    // define columns
+    references: {
+      model: "product",
+      key: "id"
+    }},
   },
   {
     sequelize,

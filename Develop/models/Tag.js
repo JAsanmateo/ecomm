@@ -13,8 +13,11 @@ Tag.init(
   },
   tag_name: {
     type: DataTypes.STRING,
-   
-  }
+    references: {
+      model: "product",
+      key: "id"
+    }
+  },
   },
   {
     sequelize,
